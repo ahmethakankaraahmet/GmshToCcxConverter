@@ -12,7 +12,7 @@ This script automates the "cleanup" process, applying a generic transformation m
 
 ---
 
-## 🚀 Usage
+## Usage Method
 
 The script is cross-platform and requires only a standard Python environment.
 
