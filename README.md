@@ -1,14 +1,17 @@
 # Gmsh to CalculiX (.inp) Converter
 
-A Python utility designed to bridge the gap between **Gmsh** mesh generation and **CalculiX (CCX)** simulation.
+A robust Python utility designed to bridge the gap between **Gmsh** mesh generation and **CalculiX (CCX)** simulation.
 
 ---
 
 ## The Problem
-While Gmsh can export mesh files in the `.inp` (Abaqus) format, the output is often not natively compatible with CalculiX. Differences in keyword handling, element set definitions, and header formatting can cause CCX to throw errors during the input phase.
+While Gmsh can export mesh files in the `.inp` (Abaqus) format, the output is often not natively compatible with CalculiX. Common issues include:
+* **Header Mismatches:** Incompatible keyword formatting.
+* **Element Set Definitions:** Gmsh Physical Groups not aligning with CCX `*NSET` or `*ELSET` syntax.
+* **Redundant Data:** Extraneous Abaqus-specific parameters that cause CCX to error out.
 
-## The Proposed Solution
-This script automates the "cleanup" process, applying a generic transformation method to ensure the generated `.inp` file aligns perfectly with the CalculiX input deck requirements.
+## The Solution
+This script automates the "cleanup" process using a generic transformation method. It ensures that the mesh, node sets, and element sets are perfectly formatted for the CalculiX input deck.
 
 ---
 
